@@ -38,7 +38,7 @@ int main(int argc, char *argv[]){
             dates=vm["date"].as<vector<string>>();                
         }
         ProcessFiles processed_file(file);
-        if(dates.size()==0){
+        if(dates.size()==1){
             vector<string>result=processed_file.get_most_active(dates[0]);
             for(string cookies:result){
                 cout<<cookies<<"\n";

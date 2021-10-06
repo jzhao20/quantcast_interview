@@ -22,12 +22,13 @@ unordered_map<string,unordered_map<string,int>> ProcessFiles::process_input(vect
     return ret;
 }
 
-unordered_map<string,multimap<int,string>> ProcessFiles::convert_to_multimap(){
-    unordered_map<string,multimap<int,string>>ret;
+unordered_map<string,multimap<int,string,greater<int>>> ProcessFiles::convert_to_multimap(){
+    unordered_map<string,multimap<int,string,greater<int>>>ret;
     unordered_map<string,unordered_map<string,int>>input=this->original_input;
     for(const auto &iterator:input){
         string key=iterator.first;
-        multimap<int,string>append;
+
+        multimap<int,string,greater<int>>append;
         for(const auto &pairs:iterator.second){
             append.insert(make_pair(pairs.second,pairs.first));
         }
@@ -85,8 +86,8 @@ ProcessFiles::ProcessFiles(string file){
 
 vector<string> ProcessFiles::get_most_active(string date){
     vector<string>ret;
-    unordered_map<string,multimap<int,string>>cached=this->cached_csv;
-    multimap<int,string>cookies_of_interest=cached[date];
+    unordered_map<string,multimap<int,string,greater<int>>>cached=this->cached_csv;
+    multimap<int,string,greater<int>>cookies_of_interest=cached[date];
     int max_val=-1;
     for(const auto &iterator:cookies_of_interest){
         if(max_val==-1){
