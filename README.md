@@ -1,6 +1,6 @@
-To run 
-mkdir build
-cd build
-cmake ..
-make
-make test 
+To run \
+mkdir build \
+cd build \
+cmake .. \
+make \
+make test \
