@@ -1,0 +1,4 @@
+#pragma once
+
+#define Quantcast_VERSION_MAJOR @Quantcast_VERSION_MAJOR@
+#define Quantcast_VERSION_MINOR @Quantcast_VERSION_MINOR@
