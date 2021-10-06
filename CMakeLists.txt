@@ -10,12 +10,13 @@ find_package(Boost COMPONENTS program_options REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 
 configure_file(mostactivecookie.h.in mostactivecookie.h)
+add_subdirectory(utils)
+
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     add_subdirectory(tests)
     enable_testing()
-    add_test(NAME TEST COMMAND test)
+    add_test(NAME TEST COMMAND tests)
 endif()
-add_subdirectory(utils)
 
 add_executable(most_active_cookie active_cookie.cxx)
 target_include_directories(most_active_cookie PUBLIC

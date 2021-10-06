@@ -44,12 +44,7 @@ string ProcessFiles::extract_date(string line){
 void ProcessFiles::read_file(){
     string filename=this->file_name;
     ifstream file(filename);
-    try{
-        if(!file.is_open())throw runtime_error("Could not open file");
-    }
-    catch(const runtime_error& error){
-        cout<<error.what()<<"\n";
-    }
+    if(!file.is_open())throw runtime_error("Could not open file");
     //extract the first line
     string line,column;
     getline(file,line);

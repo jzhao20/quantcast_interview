@@ -18,5 +18,8 @@ class ProcessFiles
     public:
         ProcessFiles(string file);
         vector<string>get_most_active(string date);
+        string get_file_name(){
+            return this->file_name;
+        }
 };
 #endif
