@@ -32,7 +32,7 @@ int main(int argc, char *argv[]){
             file=vm["file"].as<string>();
             size_t found=file.find(".csv");
             if(found==string::npos)
-                throw "must be csv file";
+                throw("must be csv file");
         }
         if(vm.count("date")){
             dates=vm["date"].as<vector<string>>();                
@@ -54,8 +54,7 @@ int main(int argc, char *argv[]){
             }
         }
     }
-    catch(string &e){
-        cerr<<"error: "<<e<<"\n";
-        return 1;
+    catch(char const* e){
+        cout<<e<<"\n";
     }
 }
