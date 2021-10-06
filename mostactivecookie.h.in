@@ -1,0 +1,4 @@
+#pragma once
+
+#define mostactivecookie_VERSION_MAJOR @mostactivecookie_VERSION_MAJOR@
+#define mostactivecookie_VERSION_MINOR @mostactivecookie_VERSION_MINOR@
